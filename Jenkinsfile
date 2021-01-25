@@ -17,7 +17,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-				echo 'build number is %BUILD_NUMBER%'
+				echo 'build number is ${env.BUILD_NUMBER}'
             }
         }
     }

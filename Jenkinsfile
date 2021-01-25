@@ -18,6 +18,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
 				echo 'build number is ${env.BUILD_NUMBER}'
+				echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
     }

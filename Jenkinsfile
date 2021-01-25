@@ -39,7 +39,7 @@ pipeline {
 						  "files": [
 							{
 							  "pattern": "build/libs/*.jar",
-							  "target": "test-repo/example-pipeline/jar/${env.BUILD_NUMBER}/"
+							  "target": "test-repo/example-pipeline/jar/${BUILD_NUMBER}/"
 							}
 						 ]
 					}'''				 

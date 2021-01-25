@@ -19,9 +19,8 @@ pipeline {
             steps {
                 rtServer (
                     id: "local-artifactory",
-                    url: http://localhost:8081/artifactory,
-                    // If you're using username and password:
-					username: 'admin',
+                    url: "http://localhost:8081/artifactory",
+                    username: 'admin',
 					password: 'Admin123'
                 )                
             }

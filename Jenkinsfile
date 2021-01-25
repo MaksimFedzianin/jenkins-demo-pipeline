@@ -11,11 +11,13 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+				bat 'gradlew test'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+				echo 'build number is ${BUILD_NUMBER}'
             }
         }
     }

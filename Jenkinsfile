@@ -21,8 +21,7 @@ pipeline {
                 rtServer (
                     id: "local-artifactory",
                     url: "http://localhost:8081/artifactory",
-                    username: 'admin',
-					password: 'Admin123'
+                    credentialsId: 'local-artifactory-credentials'
                 )                
             }
         }

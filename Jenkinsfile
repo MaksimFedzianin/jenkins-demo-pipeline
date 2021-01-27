@@ -12,6 +12,7 @@ pipeline {
             steps {
                 echo 'Testing..'
 				bat 'gradlew test'
+				junit 'build/test-results/test/*.xml'
             }
         }
 		

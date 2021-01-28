@@ -1,3 +1,4 @@
+/*
 pipeline {
     agent any
 
@@ -46,5 +47,28 @@ pipeline {
 				)
             }
         }
+    }
+}
+*/
+node {
+    echo "Fetching code..."
+    scmVars = git "https://github.com/MaksimFedzianin/jenkins-demo-pipeline.git"
+    echo "Code fetched..."
+    def option = readFile "${env.WORKSPACE}/option.txt"
+    echo "option is: |" + option + "|"
+    echo 'Branch name is: ' + scmVars.GIT_BRANCH
+    for (i=0; i<2; i++) {
+        stage("Stage #" + i) {
+           print 'Hello, world !'
+        }
+    }
+    
+    if(option != "skipTests") {
+        stage("Run Tests"){
+            echo 'Running tests'
+        }
+    }
+    else {
+        echo 'Testing skipped'
     }
 }
